@@ -1,14 +1,18 @@
-const WebSocket = require('ws');
 const express = require('express');
-const app = express();
+const http = require('http');
+const WebSocket = require('ws');
 const path = require('path');
 
+const app = express();
+const server = http.createServer(app);
+const wsServer = new WebSocket.Server({ server });
+
+// Servir arquivos estáticos
 app.use("/", express.static(path.resolve(__dirname, "../client")));
 
-const myServer = app.listen(9876);   // regular http server using node express which serves your webpage
-
-const wsServer = new WebSocket.Server({
-  noServer: true
+// Rota para a rota raiz (/)
+app.get("/", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./index.html"));
 });
 
 wsServer.on("connection", function(ws) {
@@ -17,16 +21,11 @@ wsServer.on("connection", function(ws) {
       if (client.readyState === WebSocket.OPEN) {
         client.send(msg.toString());
       }
-    })
-  })
-})
+    });
+  });
+});
 
-myServer.on('upgrade', async function upgrade(request, socket, head) {
-  if(Math.random() > 0.5){
-    return socket.end("HTTP/1.1 401 Unauthorized\r\n", "ascii")     //proper connection close in case of rejection
-  }
-
-  wsServer.handleUpgrade(request, socket, head, function done(ws) {
-    wsServer.emit('connection', ws, request);
-  })
-})
+const PORT = process.env.PORT || 9876;
+server.listen(PORT, () => {
+  console.log(`Servidor HTTP iniciado na porta ${PORT}`);
+});
