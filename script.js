@@ -1,5 +1,5 @@
 //Websocekt variables
-const url = "ws://localhost:9876/myWebsocket"
+const url = "wss://web-sockets-chat.onrender.com";
 const mywsServer = new WebSocket(url)
 
 //DOM Elements
