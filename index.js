@@ -7,8 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const wsServer = new WebSocket.Server({ server });
 
-// Servir arquivos estáticos
-app.use("/", express.static(path.resolve(__dirname, "../client")));
+app.use("/", express.static(path.resolve(__dirname, "./")));
 
 // Rota para a rota raiz (/)
 app.get("/", (req, res) => {
