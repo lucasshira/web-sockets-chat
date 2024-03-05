@@ -1,0 +1,105 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #222;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px;
+  color: #eee;
+  padding-bottom: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  border: 1px solid #eee;
+  background-color: #eee;
+  width: 400px;
+  height: 400px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+User
+deu certo porem meu input juntamente com meu botao, que estao dentro de message container estao sendo esmagados com as mensagens, estao diminuindo cada vez mais o tamanho deles e nao gostaria desse comportamento, eles precisam ser do mesmo tamanho sempre
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #222;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px;
+  color: #eee;
+  padding-bottom: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  border: 1px solid #eee;
+  background-color: #eee;
+  width: 400px;
+  height: 400px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.message-container {
+  background-color: #eee;
+  display: flex;
+  align-self: flex-end;
+  justify-content: space-between;
+  margin-top: auto;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.message-container input {
+  background-color: #eee;
+  border-radius: 10px;
+  flex-grow: 1;
+  padding: 10px;
+  width: 100%;
+  font-weight: bold;
+  display: flex;
+}
+
+.message-container button {
+  background-color: #222;
+  color: #eee;
+  border: none;
+  display: flex;
+  padding: 10px 20px;
+  font-weight: bold;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#messages {
+  background-color: #eee;
+  max-width: 100%;
+  max-height: 90%;
+  overflow-y: auto;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+#messages h5 {
+  background-color: #eee;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  word-wrap: break-word;
+}
