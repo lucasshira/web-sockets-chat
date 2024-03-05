@@ -25,7 +25,7 @@ For local deployment, you can clone the repository and follow the setup instruct
 
 ## Usage
 
-To use the application, simply visit the provided deployment link and start chatting instantly. No sign-up or login required! You can also open the site twice and freely converse between different devices, facilitating seamless communication between various devices.
+To use the application, simply visit the provided deployment link and start chatting instantly. No sign-up or login required! Additionally, you can share the website with a friend, and both of you can chat through the platform using different devices.
 
 ## Feedback
 
