@@ -21,7 +21,7 @@ For local deployment, you can clone the repository and follow the setup instruct
 
 - Real-time bidirectional communication
 - Simple and intuitive user interface
-- Seamless deployment on the Render platform
+- Deployment on the Render platform
 
 ## Usage
 
